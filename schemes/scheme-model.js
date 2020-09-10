@@ -1,4 +1,5 @@
 const db = require('../data/db-config')
+const { where } = require('../data/db-config')
 
 module.exports = {
     find, 
@@ -6,7 +7,8 @@ module.exports = {
     findSteps,
     add,
     update,
-    remove
+    remove, 
+    addStep
 }
 
 function find() {
@@ -36,7 +38,12 @@ function add(scheme) {
       });
 }
 
-
+//stretch
+// function addStep(step, id) {
+//     return db('steps')
+//     .where('steps.scheme_id', id )
+//     .insert(step)
+// }
 
 function update(changes, id) {
     return db('schemes')
